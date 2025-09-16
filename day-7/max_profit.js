@@ -1,9 +1,11 @@
-function maxProfit(price) {
+function maxProfit(arr) {
   let profit = 0;
-  for (let i = 1; i < price.length; i++)
-    if (price[i] > price[i - 1]) profit += price[i] - price[i - 1];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i - 1]) {
+      profit += arr[i] - arr[i - 1];
+    }
+  }
   return profit;
 }
-
-let price = [7, 1, 2, 8, 12];
-console.log(`Maximum Profit in Stock Market = ${maxProfit(price)}`);
+let arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(`Maximum profit in stock market is ${maxProfit(arr)}`);
