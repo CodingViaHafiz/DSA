@@ -27,13 +27,6 @@ const fakeApi = (id, ms) => {
     }, ms),
   );
 };
-async function sequential() {
-  const a = await fakeApi(1, 300);
-  const b = await fakeApi(2, 200);
-  const c = await fakeApi(3, 100);
-  return [a, b, c];
-}
-sequential().then((result) => console.log("final result sequential:", result));
 
 async function parallel() {
   const result = await Promise.all([
@@ -44,3 +37,11 @@ async function parallel() {
   return result;
 }
 parallel().then((result) => console.log("final result parallel:", result));
+
+async function sequential() {
+  const a = await fakeApi(1, 300);
+  const b = await fakeApi(2, 200);
+  const c = await fakeApi(3, 100);
+  return [a, b, c];
+}
+sequential().then((result) => console.log("final result sequential:", result));
