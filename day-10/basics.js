@@ -77,14 +77,57 @@
 // console.log(sumArray(nums));
 
 // find even number in an array
-function findEvenNumbers(nums) {
-  let evenNumbers = [];
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] % 2 === 0) {
-      evenNumbers.push(nums[i]);
-    }
+// function findEvenNumbers(nums) {
+//   let evenNumbers = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] % 2 === 0) {
+//       evenNumbers.push(nums[i]);
+//     }
+//   }
+//   return evenNumbers;
+// }
+// let nums = [77, 3, 2, 97, 12];
+// console.log(findEvenNumbers(nums));
+
+// Add two numbers of an array whom sum is target number , return their indices
+
+// function twoSum(nums, target) {
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target && i !== j) {
+//         return [i, j];
+//       }
+//     }
+//   }
+// }
+// let nums = [3, 7, 1, 13, 5, 2];
+// console.log(twoSum(nums, (target = 7)));
+
+// return the largest sum of any two adjacent numbers in an array
+// function largestAdjacentSum(nums) {
+//   let maxSum = nums[0] + nums[1]; // initialize maxSum to the sum of the first two elements
+//   for (let i = 0; i < nums.length - 1; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       let sum = nums[i] + nums[j]; // calculate the sum of the current pair
+//       if (sum > maxSum) {
+//         maxSum = sum;
+//         // return [i, j];
+//       }
+//     }
+//   }
+//   return maxSum; // return the largest sum found
+// }
+// let nums = [1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 10];
+// console.log(largestAdjacentSum(nums));
+
+// find missing number in an array of 1 to n
+function findMissingNumber(nums) {
+  let n = nums.length + 1; // total numbers should be n
+  let expectedSum = (n * (n + 1)) / 2; // sum of numbers from 1 to n
+  let actualSum = 0;
+  for (const num of nums) {
+    actualSum += num; // calculate the sum of the given numbers
   }
-  return evenNumbers;
+  return expectedSum - actualSum; // the missing number is the difference between expected and actual sum
 }
-let nums = [77, 3, 2, 97, 12];
-console.log(findEvenNumbers(nums));
+console.log(findMissingNumber([1, 2, 4, 5, 6, 7]));
