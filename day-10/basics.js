@@ -121,13 +121,118 @@
 // console.log(largestAdjacentSum(nums));
 
 // find missing number in an array of 1 to n
-function findMissingNumber(nums) {
-  let n = nums.length + 1; // total numbers should be n
-  let expectedSum = (n * (n + 1)) / 2; // sum of numbers from 1 to n
-  let actualSum = 0;
+// function findMissingNumber(nums) {
+//   let n = nums.length + 1; // total numbers should be n
+//   let expectedSum = (n * (n + 1)) / 2; // sum of numbers from 1 to n
+//   let actualSum = 0;
+//   for (const num of nums) {
+//     actualSum += num; // calculate the sum of the given numbers
+//   }
+//   return expectedSum - actualSum; // the missing number is the difference between expected and actual sum
+// }
+// console.log(findMissingNumber([1, 2, 4, 5, 6, 7]));
+
+// find all numbers greater than a target number
+// function getNumbersGreaterThanTarget(nums, target) {
+//   const newNums = [];
+//   for (const num of nums) {
+//     if (num > target) {
+//       newNums.push(num); // add the number to newNums if it's greater than the target
+//     }
+//   }
+//   return newNums; // return the array of numbers greater than the target
+// }
+// console.log(getNumbersGreaterThanTarget([1, 2, 3, 4, 5, 6, 7], 3));
+
+// find all the even numbers in an array
+// function getEvenNUmbersGreaterThanTarget(nums, target) {
+//   const result = [];
+//   for (const num of nums) {
+//     if (num > target && num % 2 === 0) {
+//       result.push(num);
+//     }
+//   }
+//   return result;
+// }
+// console.log(getEvenNUmbersGreaterThanTarget([1, 2, 3, 4, 5, 6, 7], 2));
+
+// return squares of numbers grater than target
+// function getSquaresOfNumbersGreaterThanTarget(nums, target) {
+//   const result = [];
+//   for (const num of nums) {
+//     if (num > target) {
+//       result.push(num * num);
+//     }
+//   }
+//   return result;
+// }
+// console.log(getSquaresOfNumbersGreaterThanTarget([12, 1, 4, 17, 7, 8], 4));
+
+// Return an onject containing:
+// lists of numbers greater than target
+// count of those numbers
+// function getNumbersGreaterThanTargetWithCount(nums, target) {
+//   const result = {};
+//   result.numbers = [];
+//   result.count = 0;
+//   for (const num of nums) {
+//     if (num > target) {
+//       result.numbers.push(num);
+//       result.count++;
+//     }
+//   }
+//   return result;
+// }
+// console.log(getNumbersGreaterThanTargetWithCount([1, 2, 3, 4, 5, 6, 7], 3));
+
+//Return an object with:
+// even numbers
+// odd numbers
+// count of each
+// function getEvenAndOddNumbersWithCount(nums) {
+//   const result = {};
+//   result.evenNumbers = [];
+//   result.oddNumbers = [];
+//   result.evenCount = 0;
+//   result.oddCount = 0;
+//   for (const num of nums) {
+//     if (num % 2 === 0) {
+//       result.evenNumbers.push(num);
+//       result.evenCount++;
+//     } else {
+//       result.oddNumbers.push(num);
+//       result.oddCount++;
+//     }
+//   }
+//   return result;
+// }
+// console.log(getEvenAndOddNumbersWithCount([1, 2, 3, 4, 5, 6, 7]));
+
+//Return:
+// frequency object
+// most frequent number
+function getFrequencyAndMostFrequentNumber(nums) {
+  const result = {};
+  const frequency = {};
+  let maxCount = 0;
+  let mostFrequent = null;
   for (const num of nums) {
-    actualSum += num; // calculate the sum of the given numbers
+    if (frequency[num]) {
+      frequency[num]++;
+    } else {
+      frequency[num] = 1;
+    }
+    if (frequency[num] > maxCount) {
+      maxCount = frequency[num];
+      mostFrequent = num;
+    }
   }
-  return expectedSum - actualSum; // the missing number is the difference between expected and actual sum
+  result.frequency = frequency;
+  result.mostFrequent = mostFrequent;
+  return result;
 }
-console.log(findMissingNumber([1, 2, 4, 5, 6, 7]));
+console.log(
+  getFrequencyAndMostFrequentNumber([
+    1, 2, 3, 3, 3, 3, 5, 5, 7, 7, 7, 7, 7, 7, 7, 10, 10, 10,
+  ]),
+);
