@@ -25,12 +25,55 @@
 // console.log(reverseString("ich heiBe Hafiz Abdur Rehman."));
 
 // FizzBuzz
-function fizzBuzz() {
-  for (let i = 1; i <= 30; i++) {
-    if (i % 15 === 0) console.log("FizzBuzz");
-    else if (i % 3 === 0) console.log("Fizz");
-    else if (i % 5 === 0) console.log("Buzz");
-    else console.log(i);
+// function fizzBuzz() {
+//   for (let i = 1; i <= 30; i++) {
+//     if (i % 15 === 0) console.log("FizzBuzz");
+//     else if (i % 3 === 0) console.log("Fizz");
+//     else if (i % 5 === 0) console.log("Buzz");
+//     else console.log(i);
+//   }
+// }
+// console.log(fizzBuzz());
+
+// find duplicates in an array
+// function findDuplicates(arr) {
+//   let seen = {};
+//   let duplicates = [];
+//   for (const item of arr) {
+//     if (seen[item]) {
+//       if (!duplicates.includes(item)) {
+//         duplicates.push(item);
+//       }
+//     } else {
+//       seen[item] = true;
+//     }
+//   }
+//   return duplicates;
+// }
+// console.log(findDuplicates([1, 2, 3, 4, 5, 6, 7, 7, 9]));
+
+// find factorial (using while loop)
+
+// function findFactorial(n) {
+//   let result = 1;
+//   while (n > 1) {
+//     result *= n;
+//     n--;
+//   }
+//   return result;
+// }
+// console.log(findFactorial(5));
+
+// count vowels
+
+function countVowels(str) {
+  const vowels = "aeiouAEIOU";
+  let count = 0;
+  for (const char of str) {
+    if (vowels.includes(char)) {
+      count++;
+    }
   }
+  return count;
 }
-console.log(fizzBuzz());
+console.log(countVowels("Pakistan"));
