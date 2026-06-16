@@ -66,14 +66,32 @@
 
 // count vowels
 
-function countVowels(str) {
-  const vowels = "aeiouAEIOU";
-  let count = 0;
-  for (const char of str) {
-    if (vowels.includes(char)) {
-      count++;
+// function countVowels(str) {
+//   const vowels = "aeiouAEIOU";
+//   let count = 0;
+//   for (const char of str) {
+//     if (vowels.includes(char)) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(countVowels("Pakistan"));
+
+// student grade counter
+// Return an object where:
+// Key = grade
+// Value = how many times that grade appeared
+
+function countGrades(grades) {
+  let freq = {};
+  for (const grade of grades) {
+    if (freq[grade]) {
+      freq[grade]++;
+    } else {
+      freq[grade] = 1;
     }
   }
-  return count;
+  return freq;
 }
-console.log(countVowels("Pakistan"));
+console.log(countGrades([70, 30, 40, 90, 70]));
