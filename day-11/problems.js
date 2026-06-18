@@ -83,15 +83,53 @@
 // Key = grade
 // Value = how many times that grade appeared
 
-function countGrades(grades) {
-  let freq = {};
-  for (const grade of grades) {
-    if (freq[grade]) {
-      freq[grade]++;
-    } else {
-      freq[grade] = 1;
+// function countGrades(grades) {
+//   let freq = {};
+//   for (const grade of grades) {
+//     if (freq[grade]) {
+//       freq[grade]++;
+//     } else {
+//       freq[grade] = 1;
+//     }
+//   }
+//   return freq;
+// }
+// console.log(countGrades([70, 30, 40, 90, 70]));
+
+// calculate the sum of an array of numbers
+// function sumArray(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     arr[i] += sum;
+//     sum = arr[i];
+//   }
+//   return sum;
+// }
+// console.log(sumArray([1, 2, 3, 4, 5, 6, 7]));
+
+// return an object with the frequency of each character in a string
+// function freqChar(str) {
+//   let result = {};
+//   for (const char of str) {
+//     if (result[char]) {
+//       result[char]++;
+//     } else {
+//       result[char] = 1;
+//     }
+//   }
+//   return result;
+// }
+// console.log(freqChar("Hello world"));
+
+// find the longest word in a sentence
+function LongestWord(str) {
+  str = str.split(" ");
+  let Longest = "";
+  for (const word of str) {
+    if (word.length > Longest.length) {
+      Longest = word;
     }
   }
-  return freq;
+  return Longest;
 }
-console.log(countGrades([70, 30, 40, 90, 70]));
+console.log(LongestWord("Hafiz Abdur Rehman"));
