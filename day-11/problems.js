@@ -122,14 +122,28 @@
 // console.log(freqChar("Hello world"));
 
 // find the longest word in a sentence
-function LongestWord(str) {
-  str = str.split(" ");
-  let Longest = "";
+// function LongestWord(str) {
+//   str = str.split(" ");
+//   let Longest = "";
+//   for (const word of str) {
+//     if (word.length > Longest.length) {
+//       Longest = word;
+//     }
+//   }
+//   return Longest;
+// }
+// console.log(LongestWord("Hafiz Abdur Rehman"));
+
+// calculate the frequency of word in an array of strings
+function freqWord(str) {
+  let freq = {};
   for (const word of str) {
-    if (word.length > Longest.length) {
-      Longest = word;
+    if (freq[word]) {
+      freq[word]++;
+    } else {
+      freq[word] = 1;
     }
   }
-  return Longest;
+  return freq;
 }
-console.log(LongestWord("Hafiz Abdur Rehman"));
+console.log(freqWord(["apple", "banana", "apple", "mango", "banana", "apple"]));
