@@ -5,6 +5,7 @@
 //   str = str.toLowerCase();
 //   for (let i = 0; i < str.length / 2; i++) {
 //     if (str[i] !== str[str.length - i - 1]) {
+//       // Compare characters from the start and end
 //       return false;
 //     }
 //   }
@@ -12,6 +13,16 @@
 // }
 // console.log(isPalindrome("racecar"));
 
+function isPalindrome(str) {
+  str = str.toLowerCase();
+  for (let i = 0; i < str.length / 2; i++) {
+    if (str[i] !== str[str.length - i - 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(isPalindrome("race"));
 // Reverse a string
 // function reverseString(str) {
 //   // str = str.toLowerCase();
@@ -135,15 +146,61 @@
 // console.log(LongestWord("Hafiz Abdur Rehman"));
 
 // calculate the frequency of word in an array of strings
-function freqWord(str) {
-  let freq = {};
-  for (const word of str) {
-    if (freq[word]) {
-      freq[word]++;
-    } else {
-      freq[word] = 1;
-    }
-  }
-  return freq;
+// function freqWord(str) {
+//   let freq = {};
+//   for (const word of str) {
+//     if (freq[word]) {
+//       freq[word]++;
+//     } else {
+//       freq[word] = 1;
+//     }
+//   }
+//   return freq;
+// }
+// console.log(freqWord(["apple", "banana", "apple", "mango", "banana", "apple"]));
+
+// function isPalindrome(str) {
+//   str = str.toLowerCase();
+//   for (let i = 0; i < str.length; i++) {
+//     for (let j = str.length - 1; j >= 0; j--) {
+//       if (str[i] === str[j]) {
+//         // Compare characters from the start and end
+//         return true; // If a match is found, return true
+//       }
+//       return false; // If no match is found, return false
+//     }
+//   }
+// }
+// console.log(isPalindrome("madam"));
+
+// find the day of n days from today
+// function dayOfnDaysfromToday(currentDay, n) {
+//   const days = [
+//     "Sunday",
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday",
+//   ];
+//   let currentIdx = days.indexOf(currentDay);
+//   let newIdx = (currentIdx + n) % 7;
+//   return days[newIdx];
+// }
+// console.log(dayOfnDaysfromToday("Wednesday", 11));
+
+// find the day of n days
+function dayOfnDays(n) {
+  days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[n % 7];
 }
-console.log(freqWord(["apple", "banana", "apple", "mango", "banana", "apple"]));
+console.log(dayOfnDays(10));

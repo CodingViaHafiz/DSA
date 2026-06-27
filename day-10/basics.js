@@ -211,28 +211,28 @@
 //Return:
 // frequency object
 // most frequent number
-function getFrequencyAndMostFrequentNumber(nums) {
-  const result = {};
-  const frequency = {};
-  let maxCount = 0;
-  let mostFrequent = null;
-  for (const num of nums) {
-    if (frequency[num]) {
-      frequency[num]++;
-    } else {
-      frequency[num] = 1;
-    }
-    if (frequency[num] > maxCount) {
-      maxCount = frequency[num];
-      mostFrequent = num;
-    }
-  }
-  result.frequency = frequency;
-  result.mostFrequent = mostFrequent;
-  return result;
-}
-console.log(
-  getFrequencyAndMostFrequentNumber([
-    1, 2, 3, 3, 3, 3, 5, 5, 7, 7, 7, 7, 7, 7, 7, 10, 10, 10,
-  ]),
-);
+// function getFrequencyAndMostFrequentNumber(nums) {
+//   const result = {};
+//   const frequency = {};
+//   let maxCount = 0;
+//   let mostFrequent = null;
+//   for (const num of nums) {
+//     if (frequency[num]) {
+//       frequency[num]++;
+//     } else {
+//       frequency[num] = 1;
+//     }
+//     if (frequency[num] > maxCount) {
+//       maxCount = frequency[num];
+//       mostFrequent = num;
+//     }
+//   }
+//   result.frequency = frequency;
+//   result.mostFrequent = mostFrequent;
+//   return result;
+// }
+// console.log(
+//   getFrequencyAndMostFrequentNumber([
+//     1, 2, 3, 3, 3, 3, 5, 5, 7, 7, 7, 7, 7, 7, 7, 10, 10, 10,
+//   ]),
+// );
