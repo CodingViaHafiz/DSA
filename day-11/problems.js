@@ -191,16 +191,35 @@ console.log(isPalindrome("race"));
 // console.log(dayOfnDaysfromToday("Wednesday", 11));
 
 // find the day of n days
-function dayOfnDays(n) {
-  days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  return days[n % 7];
+// function dayOfnDays(n) {
+//   days = [
+//     "Sunday",
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday",
+//   ];
+//   return days[n % 7];
+// }
+// console.log(dayOfnDays(10));
+
+// 1. Implement a function that takes a string and returns the longest substring without repeating characters.
+function longestSubstring(str) {
+  let longest = "";
+  for (let i = 0; i < str.length; i++) {
+    let current = "";
+    for (let j = i; j < str.length; j++) {
+      if (current.includes(str[j])) {
+        break;
+      }
+      current += str[j];
+    }
+    if (current.length > longest.length) {
+      longest = current;
+    }
+  }
+  return longest;
 }
-console.log(dayOfnDays(10));
+console.log(longestSubstring("abcabaa"));
