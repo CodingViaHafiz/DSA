@@ -13,16 +13,16 @@
 // }
 // console.log(isPalindrome("racecar"));
 
-function isPalindrome(str) {
-  str = str.toLowerCase();
-  for (let i = 0; i < str.length / 2; i++) {
-    if (str[i] !== str[str.length - i - 1]) {
-      return false;
-    }
-  }
-  return true;
-}
-console.log(isPalindrome("race"));
+// function isPalindrome(str) {
+//   str = str.toLowerCase();
+//   for (let i = 0; i < str.length / 2; i++) {
+//     if (str[i] !== str[str.length - i - 1]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(isPalindrome("race"));
 // Reverse a string
 // function reverseString(str) {
 //   // str = str.toLowerCase();
@@ -206,20 +206,43 @@ console.log(isPalindrome("race"));
 // console.log(dayOfnDays(10));
 
 // 1. Implement a function that takes a string and returns the longest substring without repeating characters.
-function longestSubstring(str) {
-  let longest = "";
-  for (let i = 0; i < str.length; i++) {
-    let current = "";
-    for (let j = i; j < str.length; j++) {
-      if (current.includes(str[j])) {
-        break;
-      }
-      current += str[j];
-    }
-    if (current.length > longest.length) {
-      longest = current;
+// function longestSubstring(str) {
+//   let longest = "";
+//   for (let i = 0; i < str.length; i++) {
+//     let current = "";
+//     for (let j = i; j < str.length; j++) {
+//       if (current.includes(str[j])) {
+//         break;
+//       }
+//       current += str[j];
+//     }
+//     if (current.length > longest.length) {
+//       longest = current;
+//     }
+//   }
+//   return longest;
+// }
+// console.log(longestSubstring("abcabaa"));
+
+// check whethre two strings are anagrams(same characters with same frequency).
+function isAnagrams(str1, str2) {
+  if (str1.length !== str2.length) return false;
+  let hashMap = {};
+  for (const key of str1) {
+    if (hashMap[key]) {
+      hashMap[key]++;
+    } else {
+      hashMap[key] = 1;
     }
   }
-  return longest;
+  for (const key of str2) {
+    if (!hashMap[key]) return false;
+    hashMap[key]--;
+  }
+  // for (let key in hashMap) {
+  //   if (hashMap[key] !== 0) return false;
+  // }
+  console.log(hashMap);
+  return true;
 }
-console.log(longestSubstring("abcabaa"));
+console.log(isAnagrams("silent", "listen"));
