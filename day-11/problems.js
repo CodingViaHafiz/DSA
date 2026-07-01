@@ -225,24 +225,42 @@
 // console.log(longestSubstring("abcabaa"));
 
 // check whethre two strings are anagrams(same characters with same frequency).
-function isAnagrams(str1, str2) {
-  if (str1.length !== str2.length) return false;
-  let hashMap = {};
-  for (const key of str1) {
-    if (hashMap[key]) {
-      hashMap[key]++;
+// function isAnagrams(str1, str2) {
+//   if (str1.length !== str2.length) return false;
+//   let hashMap = {};
+//   for (const key of str1) {
+//     if (hashMap[key]) {
+//       hashMap[key]++;
+//     } else {
+//       hashMap[key] = 1;
+//     }
+//   }
+//   for (const key of str2) {
+//     if (!hashMap[key]) return false;
+//     hashMap[key]--;
+//   }
+//   // for (let key in hashMap) {
+//   //   if (hashMap[key] !== 0) return false;
+//   // }
+//   console.log(hashMap);
+//   return true;
+// }
+// console.log(isAnagrams("silent", "listen"));
+
+// find the second largest number in an array
+function secondLargestNumber(arr) {
+  let largest = arr[0];
+  let secondLargest = -Infinity;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      secondLargest = largest;
+      largest = arr[i];
     } else {
-      hashMap[key] = 1;
+      if (arr[i] > secondLargest && arr[i] !== largest) {
+        secondLargest = arr[i];
+      }
     }
   }
-  for (const key of str2) {
-    if (!hashMap[key]) return false;
-    hashMap[key]--;
-  }
-  // for (let key in hashMap) {
-  //   if (hashMap[key] !== 0) return false;
-  // }
-  console.log(hashMap);
-  return true;
+  return secondLargest;
 }
-console.log(isAnagrams("silent", "listen"));
+console.log(secondLargestNumber([1, 2, 3, 4, 5]));
