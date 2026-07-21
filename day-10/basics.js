@@ -111,7 +111,7 @@
 //       let sum = nums[i] + nums[j]; // calculate the sum of the current pair
 //       if (sum > maxSum) {
 //         maxSum = sum;
-//         // return [i, j];
+//         return [i, j];
 //       }
 //     }
 //   }
@@ -119,6 +119,23 @@
 // }
 // let nums = [1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 10];
 // console.log(largestAdjacentSum(nums));
+
+// function largestAdjacentSum(nums) {
+//   let maxSum = 0;
+//   let indices = [0, 1];
+//   for (let i = 0; i < nums.length - 1; i++) {
+//     const currentSum = nums[i] + nums[i + 1];
+//     if (currentSum > maxSum) {
+//       maxSum = currentSum;
+//       indices = [i, i + 1];
+//     }
+//   }
+//   return {
+//     maxSum,
+//     indices,
+//   };
+// }
+// console.log(largestAdjacentSum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 
 // find missing number in an array of 1 to n
 // function findMissingNumber(nums) {
@@ -235,4 +252,28 @@
 //   getFrequencyAndMostFrequentNumber([
 //     1, 2, 3, 3, 3, 3, 5, 5, 7, 7, 7, 7, 7, 7, 7, 10, 10, 10,
 //   ]),
+// );
+
+// function getFrequencyAndMostFrequentNumber(nums) {
+//   let result = {};
+//   let frequency = {};
+//   let maxCount = 0;
+//   let mostFrequent = null;
+//   for (const num of nums) {
+//     if (frequency[num]) {
+//       frequency[num]++;
+//     } else {
+//       frequency[num] = 1;
+//     }
+//     if (frequency[num] > maxCount) {
+//       maxCount = frequency[num];
+//       mostFrequent = num;
+//     }
+//   }
+//   result.frequency = frequency;
+//   result.mostFrequent = mostFrequent;
+//   return result;
+// }
+// console.log(
+//   getFrequencyAndMostFrequentNumber([1, 1, 2, 3, 4, 5, 5, 5, 6, 6, 7, 8, 9]),
 // );

@@ -22,5 +22,3 @@
 // Object.freeze(obj); // use this so that nobody can change obj values
 // obj.name = "Auzer";
 // console.log(obj);
-
-//
